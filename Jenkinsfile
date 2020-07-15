@@ -1,12 +1,12 @@
-pipeline{
-	agent any
-	//agent { docker { image :'maven:3.6.6'}}
-	stages{
-		stage('Build'){
-			steps{
-				echo 'Buils'
-			}
-		}
-	}
+pipeline {
+    agent {
+        docker { image 'node:14-alpine' }
+    }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+        }
+    }
 }
-		
